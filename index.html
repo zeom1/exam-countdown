@@ -44,4 +44,30 @@
 
   <script>
     // 👉 Set your exam date here (Year, Month-1, Day, Hour, Minute)
-    const examDate = new Date(2025, 9, 9
+    const examDate = new Date(2025, 9, 9, 15, 30, 0); // Oct 9, 2025, 3:30 PM
+
+    const countdownEl = document.getElementById("countdown");
+
+    function updateCountdown() {
+      const now = new Date();
+      const diff = examDate - now;
+
+      if (diff <= 0) {
+        countdownEl.textContent = "🎉 Exam Day! Good luck!";
+        clearInterval(timer);
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+
+      countdownEl.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }
+
+    updateCountdown();
+    const timer = setInterval(updateCountdown, 1000);
+  </script>
+</body>
+</html>
