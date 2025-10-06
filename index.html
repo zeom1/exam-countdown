@@ -14,38 +14,71 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      color: white;
       text-align: center;
-    }
-
-    img {
-      width: 200px;
-      height: auto;
-      border-radius: 10px;
-      margin-bottom: 1rem;
-      object-fit: cover;
+      color: white;
     }
 
     h1 {
-      font-size: 2.5rem;
+      font-size: 2.8rem;
       margin-bottom: 1rem;
-      font-weight: 700;
+      font-weight: 800;
+      text-transform: uppercase;
+      text-shadow: 
+        0 0 10px #ff0055,
+        0 0 20px #ff0055,
+        0 0 40px #ff0055,
+        0 0 80px #ff0055;
+      animation: glow 2s ease-in-out infinite alternate;
     }
 
     #countdown {
       font-size: 2rem;
       font-weight: bold;
+      text-shadow:
+        0 0 10px #00ffff,
+        0 0 20px #00ffff,
+        0 0 40px #00ffff;
+      animation: pulse 2s infinite alternate;
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow:
+          0 0 5px #ff0055,
+          0 0 10px #ff0055,
+          0 0 20px #ff0055,
+          0 0 40px #ff0055;
+      }
+      to {
+        text-shadow:
+          0 0 20px #ff3366,
+          0 0 40px #ff3366,
+          0 0 80px #ff3366,
+          0 0 100px #ff3366;
+      }
+    }
+
+    @keyframes pulse {
+      from {
+        text-shadow:
+          0 0 10px #00ffff,
+          0 0 20px #00ffff;
+      }
+      to {
+        text-shadow:
+          0 0 20px #00ccff,
+          0 0 40px #00ccff,
+          0 0 60px #00ccff;
+      }
     }
   </style>
 </head>
 <body>
-  <!-- 🐱 Image centered above text -->
-  <img src="assets/download.jpg" alt="Funny cat" />
-
   <h1>KHATAM HONE WALA HU IN 💀💀💀</h1>
   <div id="countdown"></div>
 
   <script>
+    // 👉 Set your exam date here (Year, Month-1, Day, Hour, Minute)
     const examDate = new Date(2025, 9, 9, 15, 30, 0); // Oct 9, 2025, 3:30 PM
 
     const countdownEl = document.getElementById("countdown");
