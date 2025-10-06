@@ -24,52 +24,17 @@
       font-weight: 800;
       text-transform: uppercase;
       text-shadow: 
-        0 0 10px #ff0055,
-        0 0 20px #ff0055,
-        0 0 40px #ff0055,
-        0 0 80px #ff0055;
-      animation: glow 2s ease-in-out infinite alternate;
+        0 0 10px rgba(255, 255, 255, 0.8),
+        0 0 20px rgba(255, 255, 255, 0.6),
+        0 0 30px rgba(255, 255, 255, 0.4);
     }
 
     #countdown {
       font-size: 2rem;
       font-weight: bold;
       text-shadow:
-        0 0 10px #00ffff,
-        0 0 20px #00ffff,
-        0 0 40px #00ffff;
-      animation: pulse 2s infinite alternate;
-    }
-
-    @keyframes glow {
-      from {
-        text-shadow:
-          0 0 5px #ff0055,
-          0 0 10px #ff0055,
-          0 0 20px #ff0055,
-          0 0 40px #ff0055;
-      }
-      to {
-        text-shadow:
-          0 0 20px #ff3366,
-          0 0 40px #ff3366,
-          0 0 80px #ff3366,
-          0 0 100px #ff3366;
-      }
-    }
-
-    @keyframes pulse {
-      from {
-        text-shadow:
-          0 0 10px #00ffff,
-          0 0 20px #00ffff;
-      }
-      to {
-        text-shadow:
-          0 0 20px #00ccff,
-          0 0 40px #00ccff,
-          0 0 60px #00ccff;
-      }
+        0 0 8px rgba(255, 255, 255, 0.8),
+        0 0 16px rgba(255, 255, 255, 0.6);
     }
   </style>
 </head>
@@ -79,30 +44,4 @@
 
   <script>
     // 👉 Set your exam date here (Year, Month-1, Day, Hour, Minute)
-    const examDate = new Date(2025, 9, 9, 15, 30, 0); // Oct 9, 2025, 3:30 PM
-
-    const countdownEl = document.getElementById("countdown");
-
-    function updateCountdown() {
-      const now = new Date();
-      const diff = examDate - now;
-
-      if (diff <= 0) {
-        countdownEl.textContent = "🎉 Exam Day! Good luck!";
-        clearInterval(timer);
-        return;
-      }
-
-      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-      const minutes = Math.floor((diff / (1000 * 60)) % 60);
-      const seconds = Math.floor((diff / 1000) % 60);
-
-      countdownEl.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-    }
-
-    updateCountdown();
-    const timer = setInterval(updateCountdown, 1000);
-  </script>
-</body>
-</html>
+    const examDate = new Date(2025, 9, 9
