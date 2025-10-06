@@ -18,24 +18,34 @@
       text-align: center;
     }
 
+    img {
+      width: 200px;
+      height: auto;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+    }
+
     h1 {
-      font-size: 2.5rem;
+      font-size: 2.2rem;
       margin-bottom: 1rem;
     }
 
     #countdown {
-      font-size: 2rem;
+      font-size: 1.8rem;
       font-weight: bold;
     }
   </style>
 </head>
 <body>
+  <!-- 🐱 Centered image above text -->
+  <img src="download.jpg" alt="Funny cat" />
+
   <h1>KHATAM HONE WALA HU IN 💀💀💀</h1>
   <div id="countdown"></div>
 
   <script>
     // 👉 Set your exam date here (Year, Month-1, Day, Hour, Minute)
-    const examDate = new Date(2025, 9, 9, 15, 30, 0); // Nov 15, 2025 at 9:00 AM
+    const examDate = new Date(2025, 9, 9, 15, 30, 0); // Oct 9, 2025 at 3:30 PM
 
     const countdownEl = document.getElementById("countdown");
 
