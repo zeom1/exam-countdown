@@ -7,7 +7,7 @@
   <style>
     body {
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, black, black);
+      background: black;
       height: 100vh;
       margin: 0;
       display: flex;
@@ -23,29 +23,30 @@
       height: auto;
       border-radius: 10px;
       margin-bottom: 1rem;
+      object-fit: cover;
     }
 
     h1 {
-      font-size: 2.2rem;
+      font-size: 2.5rem;
       margin-bottom: 1rem;
+      font-weight: 700;
     }
 
     #countdown {
-      font-size: 1.8rem;
+      font-size: 2rem;
       font-weight: bold;
     }
   </style>
 </head>
 <body>
-  <!-- 🐱 Centered image above text -->
-  <img src="download.jpg" alt="Funny cat" />
+  <!-- 🐱 Image centered above text -->
+  <img src="assets/download.jpg" alt="Funny cat" />
 
   <h1>KHATAM HONE WALA HU IN 💀💀💀</h1>
   <div id="countdown"></div>
 
   <script>
-    // 👉 Set your exam date here (Year, Month-1, Day, Hour, Minute)
-    const examDate = new Date(2025, 9, 9, 15, 30, 0); // Oct 9, 2025 at 3:30 PM
+    const examDate = new Date(2025, 9, 9, 15, 30, 0); // Oct 9, 2025, 3:30 PM
 
     const countdownEl = document.getElementById("countdown");
 
